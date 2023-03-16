@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>Examen parcial 2</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+   
+    <div class="container mt-2 mb-2">
+        <div class="row">
+            <div class="col-md-5 bg-dark p-3 text-white rounded mr-2 ml-2 shadow-lg">
+                <form id="primer-formulario" action="">
+                    <div id="div1" class="form-group">
+                        <label for="nombre" class="form-check-label">Nombre:</label>
+                    </div>
+                   
+                    <div class="form-group">
+                        <label for="email" class="form-check-label">Email:</label>
+                        <input id="email" type="email" class="form-control" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="carrera" class="form-check-label">Carrera:</label>
+                    </div>
+                    <div class="form-group">
+                        <input id="idgs" type="radio" class="ml-1 form-check-input"  name="radios">
+                        <label class="ml-4 form-check-label" for="IDGS" name="radios">IDGS</label>
+                    </div>
+                    <div class="form-group">
+                        <input  id="ievnd" type="radio" class="ml-1 form-check-input" name="radios">
+                        <label class="ml-4 form-check-label" for="I" name="radios">IEVND</label>
+                    </div>
+                    <div class="form-group">
+                        <input id="im" type="radio" class="ml-1 form-check-input" name="radios">
+                        <label class="ml-4 form-check-label" for="IDGS" name="radios">IM</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="pasatiempos" class="form-check-label">Pasatiempos:</label>
+                    </div>
+                    <div class="form-group">
+                        <input id="musica" type="checkbox" class="ml-1 form-check-input valida" name="musica">
+                        <label class="ml-4 form-check-label" for="IDGS">Musica</label>
+                    </div>
+                    <div class="form-group">
+                        <input id="deportes" type="checkbox" class="ml-1 form-check-input valida" name="deportes">
+                        <label class="ml-4 form-check-label" for="IDGS">Deportes</label>
+                    </div>
+                    <div class="form-group">
+                        <input id="series" type="checkbox" class="ml-1 form-check-input valida" name="series">
+                        <label class="ml-4 form-check-label" for="IDGS">Series</label>
+                    </div>
+                    <div class="form-group">
+                        <input id="peliculas" type="checkbox" class="ml-1 form-check-input valida" name="peliculas">
+                        <label class="ml-4 form-check-label" for="IDGS">Peliculas</label>
+                    </div>
+
+                    <div class="form-group">
+
+                        <div class="g-recaptcha" data-sitekey="6LcT-wklAAAAAEu637kWhhE36sZXN9WkwYWuArlw" data-callback="correctCaptcha"></div>
+
+                    </div>
+
+                    <div class="form-group text-center">
+                        <button id="limpia" class="btn btn-danger" onclick="limpiar()">Limpiar</button>
+                        <button class="btn btn-success" onclick="enviar()" type="submit">Enviar</button>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-2">
+                            <label for="contador" class="mb-1 form-check-label">Contador:</label>
+                        </div>
+                        
+                        <div class="col-10">
+                            <input id="contador" class="form-control"  disabled type="text">
+                        </div>
+                      </div>
+                </form>
+            </div>
+
+            <br>
+
+            <div class="col-md-1"></div>
+
+            <div class="col-md-5 bg-dark p-3 text-white rounded mr-2 ml-2 shadow-lg">
+                <form  action="">
+                    <div id="div1" class="form-group">
+                        <label for="nombre" class="form-check-label">Nombre:</label>
+                        <input id="nombre2" type="text" class="form-control"  disabled>
+                    </div>
+                   
+                    <div class="form-group">
+                        <label for="email" class="form-check-label" disabled>Email:</label>
+                        <input id="email2" type="email" class="form-control" disabled>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="carrera" class="form-check-label" disabled>Carrera:</label>
+                    </div>
+                    <div class="form-group">
+                        <input id="idgs2" type="radio" class="ml-1 form-check-input" name="IDGS">
+                        <label  class="ml-4 form-check-label" readonly="true" for="IDGS" >IDGS</label>
+                    </div>
+                    <div class="form-group">
+                        <input  id="ievnd2" type="radio" class="ml-1 form-check-input" name="IENVD">
+                        <label class="ml-4 form-check-label" readonly="true" for="IENVD">IEVND</label>
+                    </div>
+                    <div class="form-group">
+                        <input id="im2" type="radio" class="ml-1 form-check-input" name="im">
+                        <label class="ml-4 form-check-label" readonly="true" for="IDGS">IM</label>
+                    </div>
+                    <div class="form-group">
+                        <label id="pasatiempos" for="carrera" class="form-check-label">Pasatiempos:</label>
+                    </div>
+                    <div class="form-group">
+                        <input id="musica2" type="checkbox" readonly="true" class="ml-1 form-check-input" name="musica">
+                        <label class="ml-4 form-check-label" for="IDGS">Musica</label>
+                    </div>
+                    <div class="form-group">
+                        <input id="deportes2" type="checkbox" readonly="true" class="ml-1 form-check-input" name="deportes">
+                        <label class="ml-4 form-check-label " for="IDGS">Deportes</label>
+                    </div>
+                    <div class="form-group">
+                        <input id="series2" type="checkbox" readonly="true" class="ml-1 form-check-input" name="series">
+                        <label class="ml-4 form-check-label " for="IDGS">Series</label>
+                    </div>
+                    <div class="form-group">
+                        <input id="peliculas2" type="checkbox" readonly="true" class="ml-1 form-check-input" name="peliculas">
+                        <label class="ml-4 form-check-label" for="IDGS">Peliculas</label>
+                    </div>
+                    <div class="form-group text-center">
+                        <button id="anterior" class="btn btn-success">Anterior</button>
+                        <button id="siguiente" class="btn btn-success">Siguiente</button>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-6">
+                          <input id="pagina" class="form-control" type="text" value="0" disabled>
+                        </div>
+                        
+                        <div class="col-6">
+                          <input id="contador2" class="form-control" type="text" disabled>
+                        </div>
+                      </div>
+                </div>
+                   
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="index.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
